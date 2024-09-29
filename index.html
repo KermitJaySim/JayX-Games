@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JayX Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+body {
+margin: 0;
+padding: 0;
+background-color: #2f2f2f;
+font-family: 'Fredoka One', cursive;
+text-align: center; /* added text-align: center */
+}
+
+header {
+background-color: #2f2f2f;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 36px;
+font-weight: bold;
+color: #34c759;
+}
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center; /* added justify-content: center */
+}
+
+nav li {
+margin-right: 20px;
+}
+
+nav a {
+color: #fff;
+text-decoration: none;
+font-size: 24px;
+transition: 0.2s;
+}
+
+nav a:hover {
+border-bottom: 2px solid #34c759;
+font-size: 26px;
+}
+
+nav a.active {
+border-bottom: 2px solid #34c759;
+}
+
+button {
+background-color: #34c759;
+color: #fff;
+border: none;
+padding: 15px 30px;
+border-radius: 10px;
+cursor: pointer;
+font-size: 18px;
+}
+
+button:hover {
+background-color: #2ecc71;
+}
+
+.featured-image {
+width: 200px;
+height: 200px;
+display: inline-block;
+margin: 80px 20px 20px 20px;
+border-radius: 10px;
+background-color: #000;
+}
+
+.latest-dev-blog {
+background-color: #fff; /* added white background */
+padding: 20px;
+margin: 20px auto;
+width: 40%;
+text-align: left;
+display: inline-block;
+}
+
+.latest-dev-blog h2 {
+font-size: 18px;
+color: #666;
+text-transform: uppercase;
+}
+
+.latest-dev-blog h1 {
+font-size: 36px;
+color: #2f4f7f;
+font-weight: bold;
+}
+
+.latest-dev-blog p {
+font-size: 18px;
+color: #87ceeb;
+}
+
+.latest-dev-blog p span {
+font-size: 24px;
+}
+
+.read-more {
+background-color: #34c759;
+color: #fff;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+cursor: pointer;
+font-size: 18px;
+}
+
+.read-more:hover {
+background-color: #2ecc71;
+}
+
+/* added styles for the content sections */
+.home-content,.games-content,.blogs-content,.codes-content {
+display: none;
+}
+
+.home-content.active,.games-content.active,.blogs-content.active,.codes-content.active {
+display: block;
+}
+
+.takedown-champions {
+background-color: #fff; /* added white background for Takedown Champions */
+padding: 20px;
+margin: 20px auto;
+width: 40%;
+text-align: left;
+display: inline-block;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">JayX Games</div>
+<nav>
+    <ul>
+    <li><a href="#" class="active">Home</a><div class="indicator"></div></li>
+    <li><a href="#">Games</a><div class="indicator"></div></li>
+    <li><a href="#">Blogs</a><div class="indicator"></div></li>
+    <li><a href="#">Codes</a><div class="indicator"></div></li>
+    </ul>
+    </nav>
+    
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        navLinks.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+        e.preventDefault(); // add this to prevent default link behavior
+        navLinks.forEach((link) => link.classList.remove('active'));
+        link.classList.add('active');
+        indicators.forEach((indicator) => (indicator.style.width = '0'));
+        indicators[index].style.width = '100%';
+        window.location.href = link.href; // add this to navigate to the link
+        });
+        });
+        </script>
+</ul>
+</nav>
+<button>Contact Us <i class="fas fa-comment"></i></button>
+</header>
+<div class="home-content active">
+    <div style="text-align: center;">
+    <div style="display: inline-flex;">
+    <div class="featured-image" style="margin-right: 20px;"></div>
+    <div style="text-align: center; width: 100%; margin: 0 auto;">
+    <h2 style="color: #34c759; font-size: 18px; text-transform: uppercase; text-align: center;">TAKEDOWN CHAMPIONS</h2>
+    <div class="takedown-champions" style="background-color: #fff; padding: 40px; width: 80%; margin: 0 auto; text-align: center;">
+    <h1 style="text-align: center;">Takedown Champions!</h1>
+    <p style="text-align: center;">Train And Prove Your Strength 💪 To Defeat Bosses And Become The Takedown Champion🏆!!</p>
+    <button class="read-more" style="display: block; margin: 0 auto;">Read More <i class="fas fa-arrow-right"></i></button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+<div class="games-content">
+<h1>Games</h1>
+<p>This is the games page.</p>
+</div>
+<div class="blogs-content">
+<h1>Blogs</h1>
+<p>This is the blogs page.</p>
+</div>
+<div class="codes-content">
+<h1>Codes</h1>
+<p>Here are some codes:</p>
+<ul>
+<li>Code 1: ABCDEFG</li>
+<li>Code 2: HIJKLMNOP</li>
+<li>Code 3: QRSTUVWXYZ</li>
+</ul>
+</div>
+
+<script>
+// add event listeners to the navigation buttons
+document.getElementById("home-btn").addEventListener("click", function() {
+document.querySelector(".home-content").classList.add("active");
+document.querySelector(".games-content").classList.remove("active");
+document.querySelector(".blogs-content").classList.remove("active");
+document.querySelector(".codes-content").classList.remove("active");
+});
+
+document.getElementById("games-btn").addEventListener("click", function() {
+document.querySelector(".home-content").classList.remove("active");
+document.querySelector(".games-content").classList.add("active");
+document.querySelector(".blogs-content").classList.remove("active");
+document.querySelector(".codes-content").classList.remove("active");
+});
+
+document.getElementById("blogs-btn").addEventListener("click", function() {
+document.querySelector(".home-content").classList.remove("active");
+document.querySelector(".games-content").classList.remove("active");
+document.querySelector(".blogs-content").classList.add("active");
+document.querySelector(".codes-content").classList.remove("active");
+});
+
+document.getElementById("codes-btn").addEventListener("click", function() {
+document.querySelector(".home-content").classList.remove("active");
+document.querySelector(".games-content").classList.remove("active");
+document.querySelector(".blogs-content").classList.remove("active");
+document.querySelector(".codes-content").classList.add("active");
+});
+</script>
+</body>
+</html>
